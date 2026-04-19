@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "DriverSession": {
+      "title": "Driver Session",
+      "description": "A single driving session tracking fatigue and risk.",
+      "type": "object",
+      "properties": {
+        "driverId": { "type": "string" },
+        "startTime": { "type": "string", "format": "date-time" },
+        "averageRisk": { "type": "number" },
+        "peakRisk": { "type": "number" },
+        "interventions": { "type": "integer" },
+        "totalDistance": { "type": "number" }
+      },
+      "required": ["driverId", "startTime"]
+    },
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Driver personalization data.",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string" },
+        "safetyScore": { "type": "number" },
+        "totalXP": { "type": "integer" },
+        "badges": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "firestore": {
+    "/profiles/{userId}": {
+      "schema": "UserProfile",
+      "description": "Driver profile and safety stats"
+    },
+    "/sessions/{sessionId}": {
+      "schema": "DriverSession",
+      "description": "Historical driving sessions"
+    }
+  }
+}

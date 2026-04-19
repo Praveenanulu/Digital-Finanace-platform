@@ -1,0 +1,15 @@
+{
+  "name": "DriveSentinel-X",
+  "description": "Production-level AI-powered Driver Monitoring, Predictive Safety, and Cognitive Assistance System with real-time computer vision and conversational AI.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "Computer Vision",
+    "Real-time Analytics",
+    "Conversational AI",
+    "Driver Safety"
+  ]
+}
